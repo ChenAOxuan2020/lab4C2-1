@@ -1,0 +1,13 @@
+output: main.o getMax.a
+mingw32-gcc-9.2.0.exe main.o getMax.a -o output
+
+main.o:main.c
+mingw32-gcc-9.2.0.exe -c main.c
+
+getMax.a:getMax.o getMax.h
+mingw32-gcc-ar.exe -rsc getMax.a getMax.o
+
+getMax.o:
+mingW32-gcc-9.2.0.exe -c getMax.c
+clean:
+rm -f *.o *.a *.i *.s
